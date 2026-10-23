@@ -3,7 +3,7 @@
 <title>Kebabish Turco · Hoyo de Manzanares</title>
 <meta name="description" content="Kebab, durum, platos y hamburguesas en el centro de Hoyo de Manzanares. Para comer aquí, recoger o a domicilio. Calle las Carretas 2.">
 <meta property="og:title" content="Kebabish Turco · Hoyo de Manzanares">
-<meta property="og:description" content="El kebab de Hoyo: para comer aquí, recoger o a domicilio. Arma tu pedido y llama.">
+<meta property="og:description" content="El kebab de Hoyo: para comer aquí, recoger o a domicilio. Prepara tu pedido y llama.">
 <meta property="og:image" content="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9THwJko-kNlb-ZtbVCJUl4JWHccwVz9FdS3vWDCNy65Eb8dTFBXNQ_wQQmHheQbP80JMKO_xERxRNcNFOQtK2ROCkj5humdLNc9WavLSyQTRC0afJi8_HgxuXh8iHWSw0HL6Q=w1200-h630-k-no">
 <meta name="theme-color" content="#17110d">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥙</text></svg>">
@@ -148,6 +148,19 @@ h1,h2,h3{font-family:var(--fh);font-weight:400;line-height:1;letter-spacing:.01e
 .sheet .acts .btn{width:100%}
 .copied{font-size:.85rem;color:var(--herb);text-align:center;min-height:1.2em}
 
+.read{position:fixed;inset:0;z-index:95;background:var(--ink);color:#fff;padding:calc(28px + env(safe-area-inset-top)) 24px calc(24px + env(safe-area-inset-bottom));display:none;flex-direction:column;overflow:auto}
+.read.on{display:flex}
+.read .kicker{color:var(--saffron)}
+.read-x{position:absolute;top:calc(14px + env(safe-area-inset-top));right:14px;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font-size:1.6rem;cursor:pointer}
+.read-lines{list-style:none;margin:8px 0 12px;max-width:640px}
+.read-lines li{font-family:var(--fh);text-transform:uppercase;font-size:clamp(1.9rem,8vw,2.8rem);line-height:1.1;padding:12px 0;border-bottom:1px dashed rgba(255,255,255,.18)}
+.read-lines li b{color:var(--saffron);font-weight:400;margin-right:10px}
+.read-extra{font-size:1.15rem;color:rgba(255,255,255,.85);margin-bottom:10px;white-space:pre-line}
+.read-tot{font-size:1.2rem;margin:4px 0 22px}
+.read-tot b{font-size:1.6rem;color:var(--saffron)}
+.read-call{max-width:420px;width:100%;margin-top:auto}
+.read-tip{font-size:.85rem;color:rgba(255,255,255,.55);margin-top:12px;text-align:center;max-width:420px}
+
 /* GALERÍA */
 .gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:220px 220px;gap:10px}
 .gal button{border:0;padding:0;border-radius:18px;overflow:hidden;cursor:zoom-in;background:var(--paper2)}
@@ -276,7 +289,7 @@ footer a{color:#fff}
   <h1>El kebab<em>de Hoyo</em></h1>
   <p class="lede">Kebab, durum, platos y hamburguesas en el centro del pueblo. Para comer aquí con terraza, recogerlo o que te lo llevemos a casa.</p>
   <div class="ctas">
-   <a class="btn btn-hot" href="#carta">Arma tu pedido →</a>
+   <a class="btn btn-hot" href="#carta">Prepara tu pedido →</a>
    <a class="btn btn-line" href="tel:+34918275197"><svg><use href="#phone"/></svg>918 27 51 97</a>
   </div>
   <div class="rate"><svg class="g-logo"><use href="#glogo"/></svg><b>4,1</b><span class="stars">★★★★</span><span>186 reseñas en Google</span></div>
@@ -303,8 +316,8 @@ footer a{color:#fff}
 
 <section id="carta" class="sec-carta"><div class="wrap">
  <span class="kicker">La carta</span>
- <h2 class="sec-title">Arma tu pedido</h2>
- <p class="sec-sub">Toca <b>+</b> en lo que te apetezca. Verás el total al momento y lo llamas con el pedido ya hecho.</p>
+ <h2 class="sec-title">Prepara tu pedido</h2>
+ <p class="sec-sub">Toca <b>+</b> en lo que te apetezca y verás el total al momento. Luego llamas al 918 27 51 97 y solo tienes que leerlo.</p>
  <div class="tabs" role="tablist" id="tabs"></div>
  <div class="menu-grid" id="menuGrid"></div>
  <p class="carta-note">Precios orientativos, IVA incluido. Pregunta por bebidas, postres y extras.</p>
@@ -363,7 +376,7 @@ footer a{color:#fff}
 
 <section class="cta-band"><div class="wrap">
  <h2>¿Hoy toca kebab?</h2>
- <p>Arma tu pedido en un minuto y llama. Lo tienes listo cuando llegues.</p>
+ <p>Prepara tu pedido en un minuto y llama. Lo tienes listo cuando llegues.</p>
  <a class="btn" href="#carta">Ver la carta →</a>
 </div></section>
 </main>
@@ -372,24 +385,33 @@ footer a{color:#fff}
 
 <a class="fab" id="fab" href="tel:+34918275197" aria-label="Llamar"><svg><use href="#phone"/></svg></a>
 
-<button class="tray-bar" id="trayBar" type="button" aria-label="Ver tu pedido"><span class="cnt" id="trayCnt">0</span><span class="lbl">Tu pedido<small id="trayHint">Toca para revisarlo</small></span><span class="tot" id="trayTot">0,00 €</span><span class="go">Pedir</span></button>
+<button class="tray-bar" id="trayBar" type="button" aria-label="Ver tu pedido"><span class="cnt" id="trayCnt">0</span><span class="lbl">Tu pedido<small id="trayHint">Toca para revisarlo</small></span><span class="tot" id="trayTot">0,00 €</span><span class="go">Llamar</span></button>
 <div class="sheet-bg" id="sheetBg"></div>
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Tu pedido">
  <div class="grab"></div>
  <h3>Tu pedido</h3>
- <p class="hint">Revísalo y llama: solo tienes que leerlo.</p>
+ <p class="hint">Revísalo y llama al 918 27 51 97: tu pedido sale en grande para leerlo.</p>
  <ul class="lines" id="lines"></ul>
  <div class="mode"><label><input type="radio" name="mode" value="Para recoger" checked>Recoger</label><label><input type="radio" name="mode" value="A domicilio">A domicilio</label></div>
  <textarea id="note" placeholder="¿Algo más? Ternera o pollo, sin cebolla, salsa picante, dirección…"></textarea>
  <div class="sum"><span>Total</span><span id="sumTot">0,00 €</span></div>
  <div class="acts">
   <a class="btn btn-hot" id="waBtn" href="#" target="_blank" rel="noopener" hidden>Enviar por WhatsApp</a>
-  <a class="btn btn-hot" href="tel:+34918275197"><svg><use href="#phone"/></svg>Llamar y pedir · 918 27 51 97</a>
+  <button class="btn btn-hot" id="readBtn" type="button"><svg><use href="#phone"/></svg>Llamar y leer mi pedido</button>
   <button class="btn btn-line" id="copyBtn" type="button">Copiar el pedido</button>
   <p class="copied" id="copied"></p>
  </div>
 </div>
 
+<div class="read" id="read" role="dialog" aria-modal="true" aria-label="Tu pedido para leer">
+ <button class="read-x" id="readX" type="button" aria-label="Cerrar">×</button>
+ <span class="kicker">Lee esto al llamar</span>
+ <ul class="read-lines" id="readLines"></ul>
+ <p class="read-extra" id="readExtra"></p>
+ <p class="read-tot">Total aprox. <b id="readTot"></b></p>
+ <a class="btn btn-hot read-call" href="tel:+34918275197"><svg><use href="#phone"/></svg>Llamar al 918 27 51 97</a>
+ <p class="read-tip">Al volver a esta página tu pedido seguirá aquí.</p>
+</div>
 <div class="lb" id="lb"><img alt=""><button class="x" aria-label="Cerrar">×</button><button class="pv" aria-label="Anterior">‹</button><button class="nx" aria-label="Siguiente">›</button></div>
 
 <script>
@@ -472,6 +494,11 @@ bar.onclick=openSheet;sbg.onclick=closeSheet;
 document.addEventListener('keydown',e=>{if(e.key=='Escape')closeSheet()});
 let ty=0;sheet.addEventListener('touchstart',e=>ty=e.touches[0].clientY,{passive:true});sheet.addEventListener('touchend',e=>{if(e.changedTouches[0].clientY-ty>80&&sheet.scrollTop<=0)closeSheet()});
 $$('input[name=mode]').forEach(r=>r.onchange=render);$('#note').oninput=()=>{if(window.WA)render()};
+$('#readBtn').onclick=()=>{const mode=$('input[name=mode]:checked').value;const note=$('#note').value.trim();
+ $('#readLines').innerHTML=[...cart].map(([id,q])=>`<li><b>${q}×</b>${all.find(a=>a.id==id).n}</li>`).join('');
+ $('#readExtra').textContent=mode+(note?'\n'+note:'');$('#readTot').textContent=eur(total());
+ closeSheet();$('#read').classList.add('on');document.body.style.overflow='hidden'};
+$('#readX').onclick=()=>{$('#read').classList.remove('on');document.body.style.overflow=''};
 $('#copyBtn').onclick=async()=>{try{await navigator.clipboard.writeText(text());$('#copied').textContent='Pedido copiado. Pégalo donde quieras.'}catch(e){$('#copied').textContent='No se pudo copiar en este navegador.'}};
 
 /* reseñas */
