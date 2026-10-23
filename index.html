@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kebabish Turco · Hoyo de Manzanares</title>
+<meta name="description" content="Kebab, durum, platos y hamburguesas en el centro de Hoyo de Manzanares. Para comer aquí, recoger o a domicilio. Calle las Carretas 2.">
+<meta property="og:title" content="Kebabish Turco · Hoyo de Manzanares">
+<meta property="og:description" content="El kebab de Hoyo: para comer aquí, recoger o a domicilio. Arma tu pedido y llama.">
+<meta property="og:image" content="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9THwJko-kNlb-ZtbVCJUl4JWHccwVz9FdS3vWDCNy65Eb8dTFBXNQ_wQQmHheQbP80JMKO_xERxRNcNFOQtK2ROCkj5humdLNc9WavLSyQTRC0afJi8_HgxuXh8iHWSw0HL6Q=w1200-h630-k-no">
+<meta name="theme-color" content="#17110d">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥙</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17110d;--ink2:#231a14;--paper:#fbf5ea;--paper2:#f3eadb;--card:#fff;--fg:#1d1611;--muted:#6e6257;--line:#e7dccb;--saffron:#f4b400;--chili:#d7261e;--chili-d:#b51d16;--herb:#2f7d4f;--fh:'Anton',Impact,sans-serif;--fb:'Outfit',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:74px;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--fg);font-family:var(--fb);font-size:17px;line-height:1.55;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+section{padding:84px 0;position:relative}
+h1,h2,h3{font-family:var(--fh);font-weight:400;line-height:1;letter-spacing:.01em;text-transform:uppercase}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--chili);margin-bottom:12px}
+.kicker::before{content:"";width:22px;height:3px;background:currentColor;border-radius:2px}
+.sec-title{font-size:clamp(2.4rem,6vw,4rem);margin-bottom:12px}
+.sec-sub{color:var(--muted);max-width:600px;margin-bottom:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:14px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;transition:transform .15s,background .2s,box-shadow .2s}
+.btn:active{transform:scale(.97)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-hot{background:var(--chili);color:#fff;box-shadow:0 12px 30px -12px var(--chili)}
+.btn-hot:hover{background:var(--chili-d)}
+.btn-sun{background:var(--saffron);color:var(--ink)}
+.btn-line{border-color:currentColor;background:transparent}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:60;background:rgba(23,17,13,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand b{font-family:var(--fh);font-weight:400;font-size:1.5rem;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+.brand b span{color:var(--saffron)}
+.brand small{display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:3px}
+.links{display:flex;align-items:center;gap:26px;list-style:none}
+.links a{text-decoration:none;font-weight:600;font-size:.95rem;color:rgba(255,255,255,.85)}
+.links a:hover{color:var(--saffron)}
+.links .cta{background:var(--chili);color:#fff;padding:10px 16px;border-radius:12px}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid rgba(255,255,255,.35);background:transparent;cursor:pointer;flex:none}
+.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:#fff;margin:auto;position:relative;transition:transform .25s,background .25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+.nav-call{display:none}
+
+/* HERO */
+.hero{background:var(--ink);color:#fff;padding:0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-top:64px;padding-bottom:76px}
+.status{display:inline-flex;align-items:center;gap:9px;padding:7px 13px;border-radius:999px;font-size:.85rem;font-weight:700;background:rgba(255,255,255,.08);margin-bottom:22px}
+.status i{width:9px;height:9px;border-radius:50%;background:#8a8a8a}
+.status.open i{background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.6);animation:pulse 2s infinite}
+.status.closed i{background:var(--chili)}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+.hero h1{font-size:clamp(3.4rem,10vw,7rem);line-height:.9;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--saffron);display:block}
+.hero .lede{font-size:1.12rem;color:rgba(255,255,255,.78);max-width:520px;margin-bottom:28px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.hero .btn-line{color:#fff;border-color:rgba(255,255,255,.35)}
+.rate{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.92rem;color:rgba(255,255,255,.7)}
+.rate b{color:#fff;font-size:1.1rem}
+.rate .stars{color:var(--saffron);letter-spacing:2px}
+.g-logo{width:20px;height:20px;flex:none}
+.hero-art{position:relative;aspect-ratio:1/1;max-width:520px;justify-self:end;width:100%}
+.hero-art .disc{position:absolute;inset:0;border-radius:50%;overflow:hidden;border:10px solid var(--ink2);box-shadow:0 0 0 2px rgba(244,180,0,.5),0 40px 80px -30px #000}
+.hero-art .disc img{width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+.hero-art .badge{position:absolute;display:grid;place-items:center;text-align:center;border-radius:50%;font-family:var(--fh);text-transform:uppercase;line-height:1}
+.hero-art .b1{width:128px;height:128px;left:-10px;bottom:22px;background:var(--saffron);color:var(--ink);font-size:1.05rem;transform:rotate(-12deg);box-shadow:0 18px 30px -12px #000}
+.hero-art .b1 big{display:block;font-size:2.2rem}
+.hero-art .b2{width:104px;height:104px;right:0;top:16px;background:var(--chili);color:#fff;font-size:.95rem;transform:rotate(10deg);padding:10px}
+.ticker{background:var(--saffron);color:var(--ink);overflow:hidden;white-space:nowrap;border-top:3px solid var(--ink)}
+.ticker div{display:inline-block;padding:12px 0;font-family:var(--fh);font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;animation:tick 28s linear infinite}
+.ticker span{margin:0 22px}
+.ticker span::after{content:"✦";margin-left:44px;color:var(--chili)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* WAYS */
+.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.way{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.way .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--paper2);margin-bottom:16px;font-size:1.5rem}
+.way h3{font-size:1.7rem;margin-bottom:6px}
+.way p{color:var(--muted);font-size:.97rem}
+
+/* CARTA + PEDIDO */
+.sec-carta{background:var(--paper2)}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-bottom:24px;padding-bottom:4px;position:sticky;top:66px;z-index:5;background:var(--paper2);padding-top:10px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);font-weight:700;font-size:.93rem;cursor:pointer;white-space:nowrap}
+.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.item{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 16px 16px 18px;transition:border-color .2s,box-shadow .2s}
+.item.in-cart{border-color:var(--chili);box-shadow:inset 4px 0 0 var(--chili)}
+.item .tx{flex:1;min-width:0}
+.item h3{font-family:var(--fb);text-transform:none;font-weight:700;font-size:1.05rem;letter-spacing:0;line-height:1.25}
+.item p{color:var(--muted);font-size:.88rem;line-height:1.4;margin-top:3px}
+.item .tag{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--chili);margin-bottom:3px}
+.item .pr{font-weight:800;font-size:1.05rem;white-space:nowrap}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:38px;height:38px;border-radius:12px;border:0;cursor:pointer;font-size:1.3rem;font-weight:700;line-height:1;display:grid;place-items:center}
+.qty .add{background:var(--ink);color:#fff}
+.qty .add:hover{background:var(--chili)}
+.qty .sub{background:var(--paper2);color:var(--fg);display:none}
+.qty .n{min-width:18px;text-align:center;font-weight:800;display:none}
+.item.in-cart .sub,.item.in-cart .n{display:grid}
+.item.in-cart .n{display:block}
+.carta-note{margin-top:18px;font-size:.85rem;color:var(--muted)}
+
+/* bandeja de pedido */
+.tray-bar{position:fixed;left:50%;bottom:16px;z-index:70;transform:translate(-50%,140%);width:min(560px,calc(100% - 24px));display:flex;align-items:center;gap:12px;padding:12px 12px 12px 18px;border-radius:20px;background:var(--ink);color:#fff;box-shadow:0 22px 50px -16px rgba(0,0,0,.6);transition:transform .35s cubic-bezier(.2,.9,.3,1.2);cursor:pointer;border:0;text-align:left}
+.tray-bar.show{transform:translate(-50%,0)}
+.tray-bar .cnt{width:34px;height:34px;border-radius:10px;background:var(--saffron);color:var(--ink);display:grid;place-items:center;font-weight:800}
+.tray-bar .lbl{flex:1;font-weight:600}
+.tray-bar .lbl small{display:block;color:rgba(255,255,255,.6);font-weight:500;font-size:.8rem}
+.tray-bar .tot{font-weight:800;font-size:1.15rem}
+.tray-bar .go{background:var(--chili);padding:10px 14px;border-radius:12px;font-weight:700}
+.tray-bar.bump{animation:bump .35s}
+@keyframes bump{40%{transform:translate(-50%,-6px) scale(1.02)}}
+.sheet-bg{position:fixed;inset:0;z-index:80;background:rgba(10,7,5,.55);opacity:0;pointer-events:none;transition:opacity .25s}
+.sheet-bg.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:90;max-width:600px;margin:0 auto;background:var(--paper);border-radius:26px 26px 0 0;padding:10px 20px calc(20px + env(safe-area-inset-bottom));max-height:88vh;overflow:auto;transform:translateY(105%);transition:transform .35s cubic-bezier(.2,.9,.3,1)}
+.sheet.on{transform:none}
+.sheet .grab{width:44px;height:5px;border-radius:5px;background:var(--line);margin:4px auto 14px}
+.sheet h3{font-size:2rem;margin-bottom:4px}
+.sheet .hint{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+.lines{list-style:none;border-top:1px dashed var(--line);margin-bottom:14px}
+.lines li{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.lines li span{flex:1;font-weight:600}
+.lines li b{white-space:nowrap}
+.lines .qty button{width:32px;height:32px;font-size:1.1rem}
+.lines .qty .sub,.lines .qty .n{display:grid}
+.lines .qty .n{display:block}
+.mode{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.mode label{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);font-weight:700;cursor:pointer}
+.mode input{accent-color:var(--chili)}
+.mode label:has(input:checked){border-color:var(--chili);color:var(--chili)}
+.sheet textarea{width:100%;min-height:64px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);padding:12px;font:inherit;font-size:.95rem;resize:vertical;margin-bottom:12px}
+.sum{display:flex;justify-content:space-between;align-items:baseline;font-weight:800;font-size:1.2rem;margin-bottom:14px}
+.sheet .acts{display:grid;gap:10px}
+.sheet .acts .btn{width:100%}
+.copied{font-size:.85rem;color:var(--herb);text-align:center;min-height:1.2em}
+
+/* GALERÍA */
+.gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:220px 220px;gap:10px}
+.gal button{border:0;padding:0;border-radius:18px;overflow:hidden;cursor:zoom-in;background:var(--paper2)}
+.gal button:first-child{grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal button:hover img{transform:scale(1.05)}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,7,5,.92);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb img{max-height:84vh;max-width:100%;border-radius:14px}
+.lb button{position:absolute;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:1.5rem;cursor:pointer}
+.lb .x{top:16px;right:16px}.lb .pv{left:12px;top:50%}.lb .nx{right:12px;top:50%}
+
+/* RESEÑAS */
+.sec-rev{background:var(--ink);color:#fff}
+.sec-rev .kicker{color:var(--saffron)}
+.sec-rev .sec-sub{color:rgba(255,255,255,.65)}
+.rv-head{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:20px}
+.rv-score{display:flex;align-items:center;gap:14px}
+.rv-score b{font-family:var(--fh);font-weight:400;font-size:3.2rem;line-height:1}
+.rv-score .stars{color:var(--saffron);letter-spacing:2px;font-size:1.1rem}
+.rv-score small{display:block;color:rgba(255,255,255,.6)}
+.rv-chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:8px 14px;border-radius:999px;border:1.5px solid rgba(255,255,255,.2);background:transparent;color:#fff;font-weight:600;font-size:.88rem;cursor:pointer}
+.chip.on{background:var(--saffron);border-color:var(--saffron);color:var(--ink)}
+.rv-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 8px;cursor:grab}
+.rv-track::-webkit-scrollbar{display:none}
+.rv{flex:0 0 min(340px,84%);scroll-snap-align:start;background:var(--ink2);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:22px}
+.rv.hide{display:none}
+.rv-top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.rv-top div{flex:1;min-width:0}
+.rv-top strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rv-top small{color:rgba(255,255,255,.55)}
+.av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;flex:none}
+.rv .stars{color:var(--saffron);letter-spacing:2px;display:block;margin-bottom:8px}
+.rv p{color:rgba(255,255,255,.85);font-size:.97rem;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.rv.open p{-webkit-line-clamp:unset}
+.rv .more{background:none;border:0;color:var(--saffron);font-weight:700;margin-top:8px;cursor:pointer;font-size:.9rem}
+.rv-nav{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+.dots{display:flex;gap:6px;flex-wrap:wrap}
+.dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25)}
+.dots i.on{background:var(--saffron);width:22px;border-radius:5px}
+.arrows{display:flex;gap:8px}
+.arrows button{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:transparent;color:#fff;cursor:pointer;font-size:1.2rem}
+
+/* INFO */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
+.hours{width:100%;border-collapse:collapse;font-size:.98rem}
+.hours td{padding:10px 0;border-bottom:1px dashed var(--line)}
+.hours td:last-child{text-align:right;font-weight:600}
+.hours tr.today td{color:var(--chili);font-weight:800}
+.contact-list{list-style:none;display:grid;gap:14px;margin:6px 0 20px}
+.contact-list li{display:flex;gap:12px;align-items:flex-start}
+.contact-list .ic{width:40px;height:40px;border-radius:12px;background:var(--paper2);display:grid;place-items:center;flex:none;font-size:1.15rem}
+.contact-list small{display:block;color:var(--muted);font-size:.8rem}
+.contact-list a{font-weight:700;text-decoration:none}
+.map{border-radius:18px;overflow:hidden;border:1px solid var(--line);height:230px;background:var(--paper2)}
+.map iframe{width:100%;height:100%;border:0}
+.apps{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.apps a{font-size:.88rem;font-weight:700;padding:9px 13px;border-radius:12px;border:1.5px solid var(--line);text-decoration:none}
+
+/* CTA + FOOTER */
+.cta-band{background:var(--chili);color:#fff;text-align:center;padding:70px 0}
+.cta-band h2{font-size:clamp(2.6rem,7vw,4.6rem);margin-bottom:12px}
+.cta-band p{opacity:.88;margin-bottom:26px}
+.cta-band .btn{background:#fff;color:var(--chili)}
+footer{background:var(--ink);color:rgba(255,255,255,.6);padding:28px 0 100px;font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#fff}
+
+.fab{position:fixed;right:16px;bottom:16px;z-index:65;width:58px;height:58px;border-radius:50%;background:var(--chili);color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);transition:transform .3s,opacity .3s}
+.fab svg{width:26px;height:26px}
+.fab.hide{transform:scale(.4);opacity:0;pointer-events:none}
+
+.rv-in{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.rv-in.vis{opacity:1;transform:none}
+
+@media (max-width:880px){
+ .hero .wrap{grid-template-columns:1fr;gap:34px;padding-top:34px;padding-bottom:54px}
+ .hero-art{max-width:360px;justify-self:center;order:-1}
+ .ways,.info-grid{grid-template-columns:1fr}
+ .menu-grid{grid-template-columns:1fr}
+ .gal{grid-template-columns:1fr 1fr;grid-template-rows:200px 150px 150px}
+ .gal button:first-child{grid-column:span 2;grid-row:auto}
+}
+@media (max-width:820px){
+ .burger{display:block}
+ .nav-call{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--chili);color:#fff;margin-left:auto}
+ .nav-call svg{width:20px;height:20px}
+ .links{position:absolute;top:66px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--ink);padding:6px 20px 18px;border-bottom:1px solid rgba(255,255,255,.1);box-shadow:0 20px 30px -10px rgba(0,0,0,.5);display:none}
+ .links.open{display:flex}
+ .links li a{display:block;padding:15px 2px;border-bottom:1px solid rgba(255,255,255,.08);font-family:var(--fh);font-weight:400;font-size:1.5rem;text-transform:uppercase;letter-spacing:.02em}
+ .links li:last-child a{border:0}
+ .links .cta{margin-top:12px;text-align:center;border-radius:14px}
+ section{padding:64px 0}
+ .hero-art .b1{width:104px;height:104px;font-size:.9rem}
+ .hero-art .b1 big{font-size:1.8rem}
+ .hero-art .b2{width:88px;height:88px;font-size:.8rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv-in{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></symbol>
+ <symbol id="glogo" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></symbol>
+</svg>
+
+<header class="nav"><div class="wrap">
+ <a class="brand" href="#inicio"><div><b>Kebab<span>ish</span> Turco</b><small>Hoyo de Manzanares</small></div></a>
+ <a class="nav-call" href="tel:+34918275197" aria-label="Llamar al 918 27 51 97"><svg><use href="#phone"/></svg></a>
+ <button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span></button>
+ <ul class="links" id="menu">
+  <li><a href="#carta">Carta</a></li>
+  <li><a href="#fotos">Fotos</a></li>
+  <li><a href="#resenas">Reseñas</a></li>
+  <li><a href="#info">Horario</a></li>
+  <li><a class="cta" href="tel:+34918275197">Llamar · 918 27 51 97</a></li>
+ </ul>
+</div></header>
+
+<main id="inicio">
+<section class="hero"><div class="wrap">
+ <div>
+  <span class="status" id="status"><i></i>Horario</span>
+  <h1>El kebab<em>de Hoyo</em></h1>
+  <p class="lede">Kebab, durum, platos y hamburguesas en el centro del pueblo. Para comer aquí con terraza, recogerlo o que te lo llevemos a casa.</p>
+  <div class="ctas">
+   <a class="btn btn-hot" href="#carta">Arma tu pedido →</a>
+   <a class="btn btn-line" href="tel:+34918275197"><svg><use href="#phone"/></svg>918 27 51 97</a>
+  </div>
+  <div class="rate"><svg class="g-logo"><use href="#glogo"/></svg><b>4,1</b><span class="stars">★★★★</span><span>186 reseñas en Google</span></div>
+ </div>
+ <div class="hero-art">
+  <div class="disc"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9THwJko-kNlb-ZtbVCJUl4JWHccwVz9FdS3vWDCNy65Eb8dTFBXNQ_wQQmHheQbP80JMKO_xERxRNcNFOQtK2ROCkj5humdLNc9WavLSyQTRC0afJi8_HgxuXh8iHWSw0HL6Q=w900-h900-k-no" alt="Plato kebab con patatas, ensalada y salsa blanca" fetchpriority="high"></div>
+  <div class="badge b1"><span>Menú kebab<big>10,49€</big></span></div>
+  <div class="badge b2"><span>A domicilio en Hoyo</span></div>
+ </div>
+</div>
+<div class="ticker" aria-hidden="true"><div><span>Kebab</span><span>Durum</span><span>Plato Kebabish</span><span>Lawasa</span><span>Falafel</span><span>Alitas</span><span>Hamburguesas</span><span>Seekh kebab</span><span>Kebab</span><span>Durum</span><span>Plato Kebabish</span><span>Lawasa</span><span>Falafel</span><span>Alitas</span><span>Hamburguesas</span><span>Seekh kebab</span></div></div>
+</section>
+
+<section id="como"><div class="wrap">
+ <span class="kicker">Como tú quieras</span>
+ <h2 class="sec-title">Aquí, para llevar o en casa</h2>
+ <p class="sec-sub">Local grande con terraza en la calle las Carretas, a un paso de la plaza.</p>
+ <div class="ways">
+  <article class="way rv-in"><div class="ic">🪑</div><h3>Come aquí</h3><p>Local amplio y terraza para comer tranquilo, solo o con la cuadrilla.</p></article>
+  <article class="way rv-in"><div class="ic">🛍️</div><h3>Recoge</h3><p>Llama, dinos qué quieres y pásate a por ello. Sin esperas.</p></article>
+  <article class="way rv-in"><div class="ic">🛵</div><h3>A domicilio</h3><p>Repartimos por Hoyo. También en Just Eat y Uber Eats.</p></article>
+ </div>
+</div></section>
+
+<section id="carta" class="sec-carta"><div class="wrap">
+ <span class="kicker">La carta</span>
+ <h2 class="sec-title">Arma tu pedido</h2>
+ <p class="sec-sub">Toca <b>+</b> en lo que te apetezca. Verás el total al momento y lo llamas con el pedido ya hecho.</p>
+ <div class="tabs" role="tablist" id="tabs"></div>
+ <div class="menu-grid" id="menuGrid"></div>
+ <p class="carta-note">Precios orientativos, IVA incluido. Pregunta por bebidas, postres y extras.</p>
+</div></section>
+
+<section id="fotos"><div class="wrap">
+ <span class="kicker">Fotos</span>
+ <h2 class="sec-title">Así sale de la plancha</h2>
+ <p class="sec-sub">Fotos reales de clientes y del local.</p>
+ <div class="gal">
+  <button type="button" data-big="https://lh3.googleusercontent.com/grass-cs/AABkmLer_-ohj9I2rX-Z37xQRyjU9H1qe8vEnMlQ63D5AuFWF5HsXGo0rGseLl3_OZrBpVCu30R1ty5YDYCBqzZ65HDq1nEsJw5MiEyUEJkUBofEMBf4AYRcGWBnCoRCOBN6BN5rGm0oxw=w1400-h1050-k-no"><img loading="lazy" src="https://lh3.googleusercontent.com/grass-cs/AABkmLer_-ohj9I2rX-Z37xQRyjU9H1qe8vEnMlQ63D5AuFWF5HsXGo0rGseLl3_OZrBpVCu30R1ty5YDYCBqzZ65HDq1nEsJw5MiEyUEJkUBofEMBf4AYRcGWBnCoRCOBN6BN5rGm0oxw=w900-h700-k-no" alt="Dos durums en la terraza"></button>
+  <button type="button" data-big="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QaEcWzhjARWmy8HNpjOVi-4yEy0iTBz3nhykcbDOhAsVDCIC2wI7LiVM2eelYO6o9QXtJSE3bDFoSQC8-J_IoCiC9fe5cpxlmV0NmLYcazy6EBUMGP2Jhcp6AfvAEryRa1R5kNvA=w1400-h1050-k-no"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QaEcWzhjARWmy8HNpjOVi-4yEy0iTBz3nhykcbDOhAsVDCIC2wI7LiVM2eelYO6o9QXtJSE3bDFoSQC8-J_IoCiC9fe5cpxlmV0NmLYcazy6EBUMGP2Jhcp6AfvAEryRa1R5kNvA=w600-h450-k-no" alt="Pollo crujiente con patatas"></button>
+  <button type="button" data-big="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R4S0C6C0w-3cm_DNxoduKgykyCn4HKMEP0JU3wyFZYKVFX1jtoKFkKb2AQR9QqCjiJIfB2S0kwiAqMH-TL-UJlqxkUlQq06LBRO7XHlPIEmO1p1Oufs5rKNSJd6CxBRrodY0mjcA=w1400-h1050-k-no"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R4S0C6C0w-3cm_DNxoduKgykyCn4HKMEP0JU3wyFZYKVFX1jtoKFkKb2AQR9QqCjiJIfB2S0kwiAqMH-TL-UJlqxkUlQq06LBRO7XHlPIEmO1p1Oufs5rKNSJd6CxBRrodY0mjcA=w600-h450-k-no" alt="La barra con el asador de kebab"></button>
+  <button type="button" data-big="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9S6sbuRakLzLt5yzZoh4SQH21qjclIX_iicYGmrfTUHxG-DNqJ1pJrHJzbzmqlOXNuuKTNZl0z5kRNgU3u2T3WDet8SLI0uu4vOj7dJm4_E4gzf2QhehY4PtgyoDt_T-uQWCoM2=w1400-h1050-k-no"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9S6sbuRakLzLt5yzZoh4SQH21qjclIX_iicYGmrfTUHxG-DNqJ1pJrHJzbzmqlOXNuuKTNZl0z5kRNgU3u2T3WDet8SLI0uu4vOj7dJm4_E4gzf2QhehY4PtgyoDt_T-uQWCoM2=w600-h450-k-no" alt="La terraza en la calle las Carretas"></button>
+  <button type="button" data-big="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Ri11LD3Vio-GCa7UtmufAjK2f6Drb1GxH92HH8wTCDx3Pmd4g11ogfg3YlGryT1QH3gDEaby8n0RTOMcWupjLXQ8PEQfq_IDMrox7xjy9Bq10Dr9QC3Z-n7V9BPN4lA91wk0a_=w1400-h1050-k-no"><img loading="lazy" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Ri11LD3Vio-GCa7UtmufAjK2f6Drb1GxH92HH8wTCDx3Pmd4g11ogfg3YlGryT1QH3gDEaby8n0RTOMcWupjLXQ8PEQfq_IDMrox7xjy9Bq10Dr9QC3Z-n7V9BPN4lA91wk0a_=w600-h450-k-no" alt="El comedor"></button>
+ </div>
+</div></section>
+
+<section id="resenas" class="sec-rev"><div class="wrap">
+ <span class="kicker">Reseñas reales de Google</span>
+ <h2 class="sec-title">"El mejor de la sierra"</h2>
+ <p class="sec-sub">Lo dicen los vecinos, no nosotros.</p>
+ <div class="rv-head">
+  <div class="rv-score"><svg class="g-logo" style="width:34px;height:34px"><use href="#glogo"/></svg><b>4,1</b><div><span class="stars">★★★★</span><small>186 reseñas en Google</small></div></div>
+  <div class="rv-chips"><button class="chip on" data-f="">Todas</button><button class="chip" data-f="domicilio|repart">A domicilio</button><button class="chip" data-f="amab|trato|simp|maj|atenci">El trato</button><button class="chip" data-f="mejor">"El mejor"</button></div>
+ </div>
+ <div class="rv-track" id="rvTrack"></div>
+ <div class="rv-nav"><div class="dots" id="rvDots"></div><div class="arrows"><button id="rvPrev" aria-label="Anterior">←</button><button id="rvNext" aria-label="Siguiente">→</button></div></div>
+</div></section>
+
+<section id="info"><div class="wrap">
+ <span class="kicker">Ven a vernos</span>
+ <h2 class="sec-title">Horario y dónde estamos</h2>
+ <div class="info-grid" style="margin-top:28px">
+  <div class="card rv-in">
+   <table class="hours"><tbody>
+    <tr><td>Lunes</td><td>13:00–17:00 · 19:00–00:00</td></tr>
+    <tr><td>Martes</td><td>13:00–17:00 · 19:00–00:00</td></tr>
+    <tr><td>Miércoles</td><td>13:00–17:00 · 19:00–00:00</td></tr>
+    <tr><td>Jueves</td><td>13:00–17:00 · 19:00–00:00</td></tr>
+    <tr><td>Viernes</td><td>13:00–17:00 · 19:00–01:00</td></tr>
+    <tr><td>Sábado</td><td>13:00–17:00 · 19:00–01:00</td></tr>
+    <tr><td>Domingo</td><td>13:00–17:00 · 19:00–01:00</td></tr>
+   </tbody></table>
+  </div>
+  <div class="card rv-in">
+   <ul class="contact-list">
+    <li><span class="ic">📍</span><div><small>Dirección</small><a href="https://www.google.com/maps/search/?api=1&query=Kebabish%20Turco%20Hoyo%20de%20Manzanares&query_place_id=ChIJZcT_8GJ3QQ0R0RPn8fkJTOY" target="_blank" rel="noopener">C/ las Carretas, 2 · Hoyo de Manzanares</a></div></li>
+    <li><span class="ic">📞</span><div><small>Pedidos y reservas</small><a href="tel:+34918275197">918 27 51 97</a></div></li>
+    <li><span class="ic">🛵</span><div><small>También en</small><div class="apps"><a href="https://www.just-eat.es/restaurants-kebabishturcohoyoenmadrid/menu" target="_blank" rel="noopener">Just Eat</a><a href="https://www.ubereats.com/es/store/kebabish-turco-hoyo/EuljDBffVcCcMXF-YXsFBQ" target="_blank" rel="noopener">Uber Eats</a></div></div></li>
+   </ul>
+   <div class="map"><iframe loading="lazy" title="Mapa" src="https://maps.google.com/maps?q=40.6215856,-3.9080888&z=17&output=embed"></iframe></div>
+  </div>
+ </div>
+</div></section>
+
+<section class="cta-band"><div class="wrap">
+ <h2>¿Hoy toca kebab?</h2>
+ <p>Arma tu pedido en un minuto y llama. Lo tienes listo cuando llegues.</p>
+ <a class="btn" href="#carta">Ver la carta →</a>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© Kebabish Turco · C/ las Carretas 2, Hoyo de Manzanares</span><span>Web hecha por <a href="https://lacedev.com" target="_blank" rel="noopener">Lace</a></span></div></footer>
+
+<a class="fab" id="fab" href="tel:+34918275197" aria-label="Llamar"><svg><use href="#phone"/></svg></a>
+
+<button class="tray-bar" id="trayBar" type="button" aria-label="Ver tu pedido"><span class="cnt" id="trayCnt">0</span><span class="lbl">Tu pedido<small id="trayHint">Toca para revisarlo</small></span><span class="tot" id="trayTot">0,00 €</span><span class="go">Pedir</span></button>
+<div class="sheet-bg" id="sheetBg"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Tu pedido">
+ <div class="grab"></div>
+ <h3>Tu pedido</h3>
+ <p class="hint">Revísalo y llama: solo tienes que leerlo.</p>
+ <ul class="lines" id="lines"></ul>
+ <div class="mode"><label><input type="radio" name="mode" value="Para recoger" checked>Recoger</label><label><input type="radio" name="mode" value="A domicilio">A domicilio</label></div>
+ <textarea id="note" placeholder="¿Algo más? Ternera o pollo, sin cebolla, salsa picante, dirección…"></textarea>
+ <div class="sum"><span>Total</span><span id="sumTot">0,00 €</span></div>
+ <div class="acts">
+  <a class="btn btn-hot" id="waBtn" href="#" target="_blank" rel="noopener" hidden>Enviar por WhatsApp</a>
+  <a class="btn btn-hot" href="tel:+34918275197"><svg><use href="#phone"/></svg>Llamar y pedir · 918 27 51 97</a>
+  <button class="btn btn-line" id="copyBtn" type="button">Copiar el pedido</button>
+  <p class="copied" id="copied"></p>
+ </div>
+</div>
+
+<div class="lb" id="lb"><img alt=""><button class="x" aria-label="Cerrar">×</button><button class="pv" aria-label="Anterior">‹</button><button class="nx" aria-label="Siguiente">›</button></div>
+
+<script>
+/* Número de WhatsApp del local (formato 34XXXXXXXXX). Vacío = el pedido se hace llamando. */
+window.WA='';
+window.MENU=[
+ {c:'Menús',d:'Con patatas o arroz y refresco',items:[
+  ['Menú Kebab',10.49,'Ternera o pollo','Top'],['Menú Durum',10.99,'Ternera o pollo','Top'],['Menú Plato',11.99,'Ternera o pollo'],['Menú Lawasa',11.50],
+  ['Menú Kebab Falafel',10.49,'Vegetariano'],['Menú Durum Falafel',10.99,'Vegetariano'],['Menú Hamburguesa',9.99,'Ternera o pollo · refresco o cerveza'],
+  ['Menú Alitas',9.99],['Menú Nuggets',9.49],['Menú Samosa',9.99],['Menú Taco',11.49,'Taco de pollo']]},
+ {c:'Kebab y durum',items:[['Kebab',6.50,'En pan de pita'],['Kebab Doble',7.50],['Durum',6.99,'Enrollado en tortita'],['Durum Doble',8.49],['Durum relleno con patatas',8.49],['Lawasa Twister Doble',8.50]]},
+ {c:'Platos',items:[['Plato Kebab',7.50,'Carne, patatas y ensalada','De los más pedidos'],['Plato Kebabish',10.99,'El completo de la casa'],['Plato Falafel',7.99,'Vegetariano']]},
+ {c:'Raciones',items:[['Seekh Kebab (3 uds.)',7.99],['Alitas',6.50],['Fingers de pollo',6.99],['Nuggets',5.49],['Falafel',5.49],['Patatas',5.49]]},
+ {c:'Hamburguesas',items:[['Hamburguesa de ternera',5.49],['Hamburguesa de pollo',4.99]]}
+];
+window.HOURS=[["13:00-17:00","19:00-00:00"],["13:00-17:00","19:00-00:00"],["13:00-17:00","19:00-00:00"],["13:00-17:00","19:00-00:00"],["13:00-17:00","19:00-01:00"],["13:00-17:00","19:00-01:00"],["13:00-17:00","19:00-01:00"]];
+window.REVIEWS=[
+ {n:"Blanca Martínez Serrano",s:5,d:"Hace 3 años",t:"El mejor kebab de la sierra pero de verdad, está buenísimo y son majísimos siempre. Yo ya no puedo ir a ningún otro porque no me gusta igual."},
+ {n:"Ángel Pesquera Carrasco",s:5,d:"Hace 4 años",t:"Con mucho el mejor de la zona noroeste, todo muy bien preparado, el más jugoso, y la atención más agradable. En la terraza se está muy bien, además es súper amplia. Merece la pena darse un paseo hasta aquí."},
+ {n:"Sergio Candel Pérez",s:4,d:"Hace un año",t:"A nosotros es el kebab que más nos gusta de la zona. Vivimos en Torrelodones pero siempre pedimos aquí. La salsa picante 🤤"},
+ {n:"Maca de Diego",s:5,d:"Hace un año",t:"Kebabish en Hoyo de Manzanares es una gran opción para comer turco. La comida es rápida, rica y con buen trato. El servicio a domicilio funciona muy bien y son muy amables. ¡Lo recomiendo!"},
+ {n:"Laura Ramirez",s:5,d:"Hace 3 años",t:"Muy rico todo y el servicio del repartidor excelente, muy buena atención, el mejor kebab que he probado, y en el local igual buena atención siempre y rica comida."},
+ {n:"Eduardo Ortega Ruiz",s:5,d:"Hace 5 años",t:"Es el mejor kebab al que he ido sin ninguna duda, aparte de que los empleados son muy majos y se acuerdan de ti a la mínima que vas un par de veces."},
+ {n:"Esther Garcia Tapia",s:5,d:"Hace 3 años",t:"Son súper simpáticos y serviciales, la comida buenísima y a muy buen precio. Atienden muy rápido si pides a domicilio."},
+ {n:"Fernando Villajos Sánchez",s:4,d:"Hace un mes",t:"La comida estaba muy buena y el servicio fue muy bueno. Muy amables. Si vuelvo por la zona, sé dónde ir a por un kebab."},
+ {n:"Nacho Escalonilla",s:5,d:"Hace 2 años",t:"Espectacular kebab, reparten a todo el pueblo."},
+ {n:"Fran Motril",s:5,d:"Hace 5 años",t:"El mejor kebab sin duda que uno puede comer por esta zona. Recomendable el plato kebab."},
+ {n:"Rodrigo Villacrez",s:5,d:"Hace 2 semanas",t:"Ali es el goat, muy rica la comida."},
+ {n:"Sol LL",s:5,d:"Hace 3 años",t:"Todo perfecto. Comida, atención, rapidez. Los aseos súper limpios. Volveré a ir."}
+];
+</script>
+<script>
+(function(){
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const eur=v=>v.toFixed(2).replace('.',',')+' €';
+
+/* menú móvil */
+const bg=$('.burger'),ln=$('.links');
+bg.addEventListener('click',()=>{const o=ln.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú')});
+$$('.links a').forEach(a=>a.addEventListener('click',()=>{ln.classList.remove('open');bg.setAttribute('aria-expanded',false)}));
+document.addEventListener('click',e=>{if(!e.target.closest('.nav')){ln.classList.remove('open');bg.setAttribute('aria-expanded',false)}});
+
+/* apariciones */
+if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.12});$$('.rv-in').forEach(el=>io.observe(el));}
+setTimeout(()=>$$('.rv-in').forEach(e=>e.classList.add('vis')),2200);
+
+/* abierto ahora */
+const H=window.HOURS;
+function madrid(){const p=new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());const g=t=>p.find(x=>x.type==t).value;const wd=['lun','mar','mié','jue','vie','sáb','dom'].indexOf(g('weekday').replace('.','').toLowerCase());return{d:wd<0?(new Date().getDay()+6)%7:wd,m:(+g('hour')%24)*60+(+g('minute'))}}
+const toM=s=>{const[h,m]=s.split(':').map(Number);return h*60+m};
+function isOpen(){const n=madrid();for(const r of H[n.d]){let[a,b]=r.split('-').map(toM);if(b<=a)b+=1440;if(n.m>=a&&n.m<b)return r}const y=(n.d+6)%7;for(const r of H[y]){let[a,b]=r.split('-').map(toM);if(b<=a&&n.m<b)return r}return false}
+const st=$('#status');const o=isOpen();
+st.className='status '+(o?'open':'closed');st.innerHTML='<i></i>'+(o?'Abierto ahora · hasta las '+o.split('-')[1].replace('00:00','00:00'):'Cerrado ahora · abre a las '+(madrid().m<toM('13:00')?'13:00':'19:00'));
+const tr=$$('.hours tr')[madrid().d];if(tr)tr.classList.add('today');
+
+/* carta + pedido */
+const cart=new Map();const all=[];
+const tabs=$('#tabs'),grid=$('#menuGrid');
+window.MENU.forEach((cat,ci)=>{cat.items.forEach((it,ii)=>all.push({id:ci+'-'+ii,c:ci,n:it[0],p:it[1],d:it[2]||cat.d||'',t:it[3]||''}))});
+tabs.innerHTML=['Todo',...window.MENU.map(c=>c.c)].map((t,i)=>`<button class="tab${i?'':' on'}" data-c="${i-1}" type="button">${t}</button>`).join('');
+grid.innerHTML=all.map(x=>`<article class="item" data-id="${x.id}" data-c="${x.c}"><div class="tx">${x.t?`<span class="tag">${x.t}</span>`:''}<h3>${x.n}</h3>${x.d?`<p>${x.d}</p>`:''}</div><span class="pr">${eur(x.p)}</span><div class="qty"><button class="sub" type="button" aria-label="Quitar ${x.n}">−</button><span class="n">0</span><button class="add" type="button" aria-label="Añadir ${x.n}">+</button></div></article>`).join('');
+$$('.tab',tabs).forEach(b=>b.onclick=()=>{$$('.tab',tabs).forEach(x=>x.classList.remove('on'));b.classList.add('on');const c=b.dataset.c;$$('.item',grid).forEach(el=>el.style.display=(c=='-1'||el.dataset.c==c)?'':'none')});
+const bar=$('#trayBar'),fab=$('#fab'),sheet=$('#sheet'),sbg=$('#sheetBg');
+function change(id,d){const q=Math.max(0,(cart.get(id)||0)+d);q?cart.set(id,q):cart.delete(id);render();if(d>0){bar.classList.remove('bump');void bar.offsetWidth;bar.classList.add('bump')}}
+function text(){const mode=$('input[name=mode]:checked').value;const note=$('#note').value.trim();let t='Hola! Quería hacer un pedido ('+mode.toLowerCase()+'):\n';cart.forEach((q,id)=>{const x=all.find(a=>a.id==id);t+=`- ${q} x ${x.n}\n`});t+='Total aprox.: '+eur(total());if(note)t+='\n'+note;return t}
+function total(){let s=0;cart.forEach((q,id)=>s+=q*all.find(a=>a.id==id).p);return s}
+function render(){let n=0;cart.forEach(q=>n+=q);
+ $$('.item',grid).forEach(el=>{const q=cart.get(el.dataset.id)||0;el.classList.toggle('in-cart',q>0);$('.n',el).textContent=q});
+ $('#trayCnt').textContent=n;$('#trayTot').textContent=eur(total());$('#sumTot').textContent=eur(total());
+ bar.classList.toggle('show',n>0);fab.classList.toggle('hide',n>0);
+ $('#lines').innerHTML=[...cart].map(([id,q])=>{const x=all.find(a=>a.id==id);return `<li data-id="${id}"><span>${x.n}</span><b>${eur(x.p*q)}</b><div class="qty"><button class="sub" type="button" aria-label="Quitar">−</button><span class="n">${q}</span><button class="add" type="button" aria-label="Añadir">+</button></div></li>`}).join('');
+ if(!n)closeSheet();
+ if(window.WA){const w=$('#waBtn');w.hidden=false;w.href='https://wa.me/'+window.WA+'?text='+encodeURIComponent(text())}
+}
+grid.addEventListener('click',e=>{const it=e.target.closest('.item');if(!it)return;if(e.target.closest('.add'))change(it.dataset.id,1);else if(e.target.closest('.sub'))change(it.dataset.id,-1)});
+$('#lines').addEventListener('click',e=>{const li=e.target.closest('li');if(!li)return;if(e.target.closest('.add'))change(li.dataset.id,1);else if(e.target.closest('.sub'))change(li.dataset.id,-1)});
+function openSheet(){sheet.classList.add('on');sbg.classList.add('on')}
+function closeSheet(){sheet.classList.remove('on');sbg.classList.remove('on')}
+bar.onclick=openSheet;sbg.onclick=closeSheet;
+document.addEventListener('keydown',e=>{if(e.key=='Escape')closeSheet()});
+let ty=0;sheet.addEventListener('touchstart',e=>ty=e.touches[0].clientY,{passive:true});sheet.addEventListener('touchend',e=>{if(e.changedTouches[0].clientY-ty>80&&sheet.scrollTop<=0)closeSheet()});
+$$('input[name=mode]').forEach(r=>r.onchange=render);$('#note').oninput=()=>{if(window.WA)render()};
+$('#copyBtn').onclick=async()=>{try{await navigator.clipboard.writeText(text());$('#copied').textContent='Pedido copiado. Pégalo donde quieras.'}catch(e){$('#copied').textContent='No se pudo copiar en este navegador.'}};
+
+/* reseñas */
+const R=window.REVIEWS,tk=$('#rvTrack');const cols=['#d7261e','#2f7d4f','#f4b400','#7c3aed','#0891b2','#ea580c'];
+tk.innerHTML=R.map((r,i)=>`<article class="rv" data-k="${r.t.toLowerCase()}"><div class="rv-top"><span class="av" style="background:${cols[i%cols.length]}">${r.n.trim()[0].toUpperCase()}</span><div><strong>${r.n}</strong><small>${r.d}</small></div><svg class="g-logo"><use href="#glogo"/></svg></div><span class="stars">${'★'.repeat(r.s)}</span><p>${r.t}</p><button class="more" type="button">Leer más</button></article>`).join('');
+$$('.rv',tk).forEach(c=>{const p=$('p',c),b=$('.more',c);requestAnimationFrame(()=>{if(p.scrollHeight<=p.clientHeight+2)b.style.display='none'});b.onclick=()=>{c.classList.toggle('open');b.textContent=c.classList.contains('open')?'Leer menos':'Leer más'}});
+const dots=$('#rvDots');const vis=()=>$$('.rv:not(.hide)',tk);
+function upd(){const v=vis();let idx=0,best=1e9;v.forEach((c,i)=>{const d=Math.abs(c.offsetLeft-tk.scrollLeft-tk.offsetLeft);if(d<best){best=d;idx=i}});$$('i',dots).forEach((d,i)=>d.classList.toggle('on',i==idx))}
+function mkDots(){dots.innerHTML=vis().map(()=>'<i></i>').join('');upd()}
+tk.addEventListener('scroll',()=>requestAnimationFrame(upd));
+$('#rvPrev').onclick=()=>tk.scrollBy({left:-tk.clientWidth*.8,behavior:'smooth'});
+$('#rvNext').onclick=()=>tk.scrollBy({left:tk.clientWidth*.8,behavior:'smooth'});
+$$('.rv-chips .chip').forEach(ch=>ch.onclick=()=>{$$('.rv-chips .chip').forEach(x=>x.classList.remove('on'));ch.classList.add('on');const f=ch.dataset.f;$$('.rv',tk).forEach(c=>c.classList.toggle('hide',!!f&&!f.split('|').some(w=>c.dataset.k.includes(w))));tk.scrollTo({left:0});mkDots()});
+let down=false,sx=0,sl=0;tk.addEventListener('mousedown',e=>{down=true;sx=e.pageX;sl=tk.scrollLeft;tk.style.scrollSnapType='none'});window.addEventListener('mouseup',()=>{if(down){down=false;tk.style.scrollSnapType=''}});tk.addEventListener('mousemove',e=>{if(down){e.preventDefault();tk.scrollLeft=sl-(e.pageX-sx)}});
+const auto=setInterval(()=>{if(document.hidden)return;const max=tk.scrollWidth-tk.clientWidth;if(tk.scrollLeft>=max-5)tk.scrollTo({left:0,behavior:'smooth'});else tk.scrollBy({left:tk.querySelector('.rv:not(.hide)').offsetWidth+16,behavior:'smooth'})},5500);
+['pointerdown','wheel','touchstart'].forEach(ev=>tk.addEventListener(ev,()=>clearInterval(auto),{passive:true}));
+mkDots();
+
+/* galería */
+const gl=$$('.gal button'),lb=$('#lb'),im=$('img',lb);let k=0;
+const show=i=>{k=(i+gl.length)%gl.length;im.src=gl[k].dataset.big;im.alt=$('img',gl[k]).alt;lb.classList.add('on')};
+gl.forEach((b,i)=>b.onclick=()=>show(i));$('.x',lb).onclick=()=>lb.classList.remove('on');$('.pv',lb).onclick=e=>{e.stopPropagation();show(k-1)};$('.nx',lb).onclick=e=>{e.stopPropagation();show(k+1)};
+lb.onclick=e=>{if(e.target==lb)lb.classList.remove('on')};
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key=='Escape')lb.classList.remove('on');if(e.key=='ArrowLeft')show(k-1);if(e.key=='ArrowRight')show(k+1)});
+let tx=0;lb.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});lb.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)show(k+(d<0?1:-1))});
+
+render();
+})();
+</script>
+</body></html>
